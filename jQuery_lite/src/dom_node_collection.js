@@ -4,11 +4,25 @@ class DOMNodeCollection{
     }
 
     html(string = null){
-        if (string){
+        if (string || string === ""){
             this.elements.forEach(el => {
                 el.innerHTML = string;
             });
         } else {
+            return this.elements[0].innerHTML;
+        }
+    }
+
+    empty(){
+        this.html("");
+    }
+
+    append(selector){
+        if (typeof selector === "string" || selector instanceof String) {
+            this.elements.forEach(el => {
+                el.innerHTML += string;
+            });
+        } else{selector instanceof DOMNodeCollection} {
             return this.elements[0].innerHTML;
         }
     }
@@ -18,3 +32,8 @@ class DOMNodeCollection{
 module.exports = {
     DOMNodeCollection
 }
+
+
+
+
+this.element.innerHTML = inputElement.outerHTML
